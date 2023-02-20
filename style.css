@@ -1,0 +1,15 @@
+.game {
+  display: none;
+}
+
+.game.visible {
+  display: flex;
+}
+
+.form-group.invisible {
+  display: none;
+}
+
+.error {
+  color: red;
+}

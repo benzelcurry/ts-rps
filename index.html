@@ -5,14 +5,23 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
+  <link rel="stylesheet" href="./style.css">
   <script src="./dist/app.js" defer></script>
 </head>
 <body>
   <h1>Rock, Paper, Scissors</h1>
-  <div class="buttons">
-    <button class="rock btn">Rock</button>
-    <button class="paper btn">Paper</button>
-    <button class="scissors btn">Scissors</button>
+  <div class="form-group">
+    <label for="username">Please enter a username: </label>
+    <input type="text" id="username" name="username" class="username">
+    <button class="submit">Submit</button>
+    <p class="error"></p>
+  </div>
+  <div class="game">
+    <div class="buttons">
+      <button class="rock btn">Rock</button>
+      <button class="paper btn">Paper</button>
+      <button class="scissors btn">Scissors</button>
+    </div>
   </div>
 </body>
 </html>
