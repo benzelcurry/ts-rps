@@ -44,11 +44,11 @@ userBtn?.addEventListener('click', () => {
 const playCom = () => {
   const choice = Math.floor(Math.random() * 3);
   if (choice === 0) {
-    return comChoice === 'Rock';
+    return comChoice = 'Rock';
   } else if (choice === 1) {
-    return comChoice === 'Paper';
+    return comChoice = 'Paper';
   } else {
-    return comChoice === 'Scissors';
+    return comChoice = 'Scissors';
   };
 };
 
@@ -57,38 +57,38 @@ const determineWinner = (
   choiceOne: string,
   choiceTwo: string,
   winner: string,
-  score: number
 ) => {
-  score++;
-  if (score === 5) {
-    return (message = `Congratulations to ${winner}, you've won the game!`);
+  winner === username ? userScore++ : comScore++;
+  if (userScore === 5 || comScore === 5) {
+    
   } else {
     return (message = `${winner} wins this round! ${choiceOne} beats ${choiceTwo}.`);
   }
 };
 
 // Plays the round after choices are submitted
+// Could make this even less DRY with another helper function
 const playRound = (playerChoice: string, comChoice: string) => {
   if (playerChoice === comChoice) {
     message = `Draw! Both users selected ${playerChoice}.`;
     return draws++;
   } else if (playerChoice === 'Rock') {
     if (comChoice === 'Paper') {
-      determineWinner('Paper', 'rock', 'The computer', comScore);
+      determineWinner('Paper', 'rock', 'The computer');
     } else {
-      determineWinner('Rock', 'scissors', username, userScore);
+      determineWinner('Rock', 'scissors', username);
     }
   } else if (playerChoice === 'Paper') {
     if (comChoice === 'Scissors') {
-      determineWinner('Rock', 'scissors', 'The computer', comScore);
+      determineWinner('Scissors', 'paper', 'The computer');
     } else {
-      determineWinner('Paper', 'rock', username, userScore);
+      determineWinner('Paper', 'rock', username);
     }
   } else {
     if (comChoice === 'Rock') {
-      determineWinner('Rock', 'scissors', 'The computer', comScore);
+      determineWinner('Rock', 'scissors', 'The computer');
     } else {
-      determineWinner('Scissors', 'paper', username, userScore);
+      determineWinner('Scissors', 'paper', username);
     }
   }
 };

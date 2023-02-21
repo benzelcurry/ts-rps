@@ -1,3 +1,18 @@
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+.title {
+  margin-top: 100px;
+}
+
 .game {
   display: none;
 }
@@ -5,6 +20,7 @@
 .game.visible {
   display: flex;
   flex-direction: column;
+  align-items: center;
 }
 
 .form-group.invisible {
@@ -13,4 +29,31 @@
 
 .error {
   color: red;
+}
+
+.buttons {
+  display: flex;
+  width: 100%;
+  margin: 50px;
+  justify-content: space-evenly;
+}
+
+.scores {
+  display: flex;
+  gap: 100px;
+}
+
+.score-group {
+  display: flex;
+  gap: 5px;
+  font-weight: bold;
+}
+
+.gameover {
+  display: none;
+}
+
+.gameover.visible {
+  display: flex;
+  flex-direction: column;
 }

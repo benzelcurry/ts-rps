@@ -9,7 +9,7 @@
   <script src="./dist/app.js" defer></script>
 </head>
 <body>
-  <h1>Rock, Paper, Scissors</h1>
+  <h1 class="title">Rock, Paper, Scissors</h1>
   <div class="form-group">
     <label for="username">Please enter a username: </label>
     <input type="text" id="username" name="username" class="username">
@@ -36,6 +36,10 @@
         <p class="draws-label">Draws: </p>
         <p class="draws-score">0</p>
       </div>
+    </div>
+    <div class="gameover">
+      <h3 class="win-msg"></h3>
+      <button class="play-btn">Click here to play again</button>
     </div>
   </div>
 </body>
