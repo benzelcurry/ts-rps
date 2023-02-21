@@ -4,6 +4,7 @@
 
 .game.visible {
   display: flex;
+  flex-direction: column;
 }
 
 .form-group.invisible {

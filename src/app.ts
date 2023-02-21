@@ -12,18 +12,27 @@ const userBtn = document.querySelector('.submit');
 const userPrompt = document.querySelector('.form-group');
 const error = document.querySelector('.error');
 const game = document.querySelector('.game');
-const messageElement = document.querySelector('message');
+const messageElement = document.querySelector('.message');
+const playerScore = document.querySelector('.user-score');
+const computerScore = document.querySelector('.com-score');
+const drawScore = document.querySelector('.draws-score');
 
 btns.forEach((btn) => {
   btn.addEventListener('click', () => {
-    console.log(btn.textContent);
-    console.log(username);
+    userChoice = btn.textContent!;
+    playCom();
+    playRound(userChoice, comChoice);
+    messageElement!.textContent = message;
+    playerScore!.textContent = String(userScore);
+    computerScore!.textContent = String(comScore);
+    drawScore!.textContent = String(draws);
   });
 });
 
 userBtn?.addEventListener('click', () => {
   if (userInput?.value) {
     username = userInput.value;
+    document.querySelector('.user-label')!.textContent = `${username}: `;
     userPrompt?.classList.add('invisible');
     game?.classList.add('visible');
   } else {
