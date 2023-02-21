@@ -30,6 +30,16 @@ userBtn?.addEventListener("click", () => {
   }
 });
 
+// Helper function for condensing the code in playRound()
+const determineWinner = (choiceOne: string, choiceTwo: string, winner: string, score: number) => {
+  score++;
+  if (score === 5) {
+    return message = `Congratulations to ${winner}, you've won the game!`;
+  } else {
+    return message = `${winner} wins this round! ${choiceOne} beats ${choiceTwo}.`
+  };
+};
+
 // Plays the round after choices are submitted
 const playRound = (playerChoice: string, comChoice: string) => {
   if (playerChoice === comChoice) {
@@ -37,27 +47,21 @@ const playRound = (playerChoice: string, comChoice: string) => {
     return draws++;
   } else if (playerChoice === 'Rock') {
     if (comChoice === 'Paper') {
-      message = 'The computer wins this round! Paper beats rock.';
-      return comScore++;
+      determineWinner('Paper', 'rock', 'The computer', comScore);
     } else {
-      message = `${username} wins this round! Rock beats scissors.`;
-      return userScore++;
+      determineWinner('Rock', 'scissors', username, userScore);
     }
   } else if (playerChoice === 'Paper') {
     if (comChoice === 'Scissors') {
-      message = 'The computer wins this round! Scissors beats paper.';
-      return comScore++;
+      determineWinner('Rock', 'scissors', 'The computer', comScore);
     } else {
-      message = `${username} wins this round! Paper beats rock.`;
-      return userScore++;
+      determineWinner('Paper', 'rock', username, userScore);
     }
   } else {
     if (comChoice === 'Rock') {
-      message = 'The computer wins this round! Rock beats scissors.';
-      return comScore++;
+      determineWinner('Rock', 'scissors', 'The computer', comScore);
     } else {
-      message = `${username} wins this round! Scissors beats paper.`;
-      return userScore++;
+      determineWinner('Scissors', 'paper', username, userScore);
     };
   };
 };
