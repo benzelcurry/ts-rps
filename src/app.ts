@@ -48,6 +48,11 @@ playBtn?.addEventListener('click', () => {
   userScore = 0;
   comScore = 0;
   draws = 0;
+  message = 'Welcome to your new game!';
+  messageElement!.textContent = message;
+  playerScore!.textContent = String(userScore);
+  computerScore!.textContent = String(comScore);
+  drawScore!.textContent = String(draws);
 })
 
 // Determines computer's choice
